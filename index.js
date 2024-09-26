@@ -39,4 +39,16 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
     })
     .catch(err => console.error(err)) // Log any errors
 
+    function getCurrentTime() { 
+        // Get current date and time
+        const date = new Date()
+         // Update time element with formatted time
+        document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "short"})
+    }
+    
+    // Update the time every second
+    setInterval(getCurrentTime, 1000)
+    
+
+
 
