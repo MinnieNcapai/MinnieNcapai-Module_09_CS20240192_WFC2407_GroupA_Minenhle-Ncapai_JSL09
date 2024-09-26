@@ -56,3 +56,33 @@ div#crypto-top {
 div#crypto-top > span {
     margin-left: 10px; /* Add space to the left of the span in crypto-top */
 }
+
+  /* Flex container for weather section */
+div#weather {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* Align items to the right */
+    align-self: flex-start; /* Align container to the top */
+    margin-top: -20px;  /* Adjust top margin to position container */
+}
+
+ /* Set width for weather icon */
+div#weather > img {
+    width: 70px;
+}
+
+ /* Style for city name */
+p.weather-city {
+    width: 100%;
+    text-align: right; /* Align text to the right */
+    margin: 0;
+    margin-top: -10px;
+}
+
+ /* Style for temperature display */
+p.weather-temp {
+    margin: 0;
+    font-size: 1.7rem;
+    margin-left: -10px; /* Adjust left margin */
+}
