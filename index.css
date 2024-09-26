@@ -32,3 +32,13 @@ div.top {
     display: flex;
     justify-content: space-between;
 }
+
+h1.time {
+     /* Center the time text */
+    text-align: center;
+}
+
+ /* Set font size for crypto section */
+div#crypto { 
+    font-size: 1.3rem;
+}

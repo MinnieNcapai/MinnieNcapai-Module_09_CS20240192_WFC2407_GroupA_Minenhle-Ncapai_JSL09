@@ -23,3 +23,20 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
           return res.json() // Parse/convert response to JSON
       })
 
+      //Handle fetched data
+      .then(data => { 
+        // Display the fetched data in the element with ID "price".  
+        document.getElementById("crypto-top").innerHTML = `
+            <img src=${data.image.small} />
+            <span>${data.name}</span>
+        `
+// Update crypto section with current, high, and low prices
+        document.getElementById("crypto").innerHTML += ` 
+        <p>🎯: $${data.market_data.current_price.usd}</p>
+        <p>👆: $${data.market_data.high_24h.usd}</p>
+        <p>👇: $${data.market_data.low_24h.usd}</p>
+    `
+    })
+    .catch(err => console.error(err)) // Log any errors
+
+
