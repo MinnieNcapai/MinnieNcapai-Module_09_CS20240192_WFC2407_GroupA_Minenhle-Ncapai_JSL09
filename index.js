@@ -48,7 +48,33 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
     
     // Update the time every second
     setInterval(getCurrentTime, 1000)
-    
 
+ navigator.geolocation.getCurrentPosition(position => {
+        console.log(position); // Log position to see if coordinates are correct
+         // Fetch weather data using latitude and longitude
+        fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial`)
+        // Check if response is okay, throw error if no
+            .then(res => {
+                if (!res.ok) {
+                    throw Error("Weather data not available")
+                }
+                return res.json() // Parse response to JSON
+            })
+
+            .then(data => {
+                // Log weather data to console
+                console.log(data)
+                 // Construct URL for weather icon
+                const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+                // Update weather element with icon and temperature
+                document.getElementById("weather").innerHTML = `
+                    <img src=${iconUrl} />
+                    <p>${Math.round(data.main.temp)}º</p>
+                    <p>${data.name}</p>
+                `
+            })
+            .catch(err => console.error(err))  // Log any errors
+    });
+        
 
 
