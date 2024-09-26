@@ -42,3 +42,17 @@ h1.time {
 div#crypto { 
     font-size: 1.3rem;
 }
+
+div#crypto > p {
+    margin: 0;
+}
+
+div#crypto-top {
+    display: flex; /* Flex container for crypto-top to align items */
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+div#crypto-top > span {
+    margin-left: 10px; /* Add space to the left of the span in crypto-top */
+}
